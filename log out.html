@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("upp.jpg") center / cover no-repeat fixed;
+            color: white;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 750px;
+            padding: 50px 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #00d9ff;
+            color: black;
+        }
+
+        .bottom-nav .logout {
+            background: #ff4545;
+            color: white;
+        }
+
+        .bottom-nav .logout:hover {
+            background: white;
+            color: red;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+                gap: 3px;
+                padding: 8px 5px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="content">
+        <h1>Welcome to My Website!</h1>
+        <p>You are now on the homepage.</p>
+        <p>Explore our products and services.</p>
+    </main>
+
+   <nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="film viewing.html">FILM VIEWING</a>
+        <a href="log in form.html">LOGOUT</a>
+    </nav>
+
+
+    <script>
+        function logout() {
+            const confirmLogout = confirm(
+                "Are you sure you want to log out?"
+            );
+
+            if (confirmLogout) {
+                window.location.replace("login.html");
+            }
+        }
+    </script>
+
+</body>
+</html>

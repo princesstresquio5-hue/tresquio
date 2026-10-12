@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("upp.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding-bottom: 120px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px 25px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .header p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(220px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 18px;
+        }
+
+        .product-card h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 21px !important;
+            font-weight: bold;
+            color: #00f0ff;
+        }
+
+        .buy-btn {
+            background: #00d9ff;
+            color: black;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover,
+        .bottom-nav a.active {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                padding: 15px 20px;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+                width: 96%;
+                padding: 8px 5px;
+                gap: 3px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>OUR PRODUCTS</h1>
+        <p>Discover our amazing products at affordable prices!</p>
+    </header>
+
+    <!-- 10 PRODUCTS -->
+    <main class="products">
+
+        <div class="product-card">
+            <img src="y1.jpg" alt="T-Shirt">
+            <h2>T-Shirt</h2>
+            <p>Comfortable and stylish shirt for everyday wear.</p>
+            <p class="price">250.00</p>
+            <button class="buy-btn" onclick="buyProduct('T-Shirt', 250)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y2.jpg" alt="Shoes">
+            <h2>Shoes</h2>
+            <p>Comfortable footwear for casual and daily use.</p>
+            <p class="price">850.00</p>
+            <button class="buy-btn" onclick="buyProduct('Shoes', 850)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y3.jpg" alt="Bag">
+            <h2>Bag</h2>
+            <p>A useful bag for school, work, and travel.</p>
+            <p class="price">450.00</p>
+            <button class="buy-btn" onclick="buyProduct('Bag', 450)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y4.jpg" alt="Watch">
+            <h2>Watch</h2>
+            <p>A stylish accessory for any occasion.</p>
+            <p class="price">650.00</p>
+            <button class="buy-btn" onclick="buyProduct('Watch', 650)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y5.jpg" alt="Headphones">
+            <h2>Headphones</h2>
+            <p>Enjoy your favorite music with clear sound.</p>
+            <p class="price">?550.00</p>
+            <button class="buy-btn" onclick="buyProduct('Headphones', 550)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y6.jpg" alt="Sunglasses">
+            <h2>Sunglasses</h2>
+            <p>Fashionable sunglasses for sunny days.</p>
+            <p class="price">300.00</p>
+            <button class="buy-btn" onclick="buyProduct('Sunglasses', 300)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y7.jpg" alt="Perfume">
+            <h2>Perfume</h2>
+            <p>A pleasant fragrance for everyday occasions.</p>
+            <p class="price">400.00</p>
+            <button class="buy-btn" onclick="buyProduct('Perfume', 400)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y8.jpg" alt="Wallet">
+            <h2>Wallet</h2>
+            <p>A practical wallet for cash and cards.</p>
+            <p class="price">200.00</p>
+            <button class="buy-btn" onclick="buyProduct('Wallet', 200)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y9.jpg" alt="Cap">
+            <h2>Cap</h2>
+            <p>A casual cap to complete your everyday outfit.</p>
+            <p class="price">180.00</p>
+            <button class="buy-btn" onclick="buyProduct('Cap', 180)">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="y10.jpg" alt="Jacket">
+            <h2>Jacket</h2>
+            <p>A comfortable jacket for cool weather.</p>
+            <p class="price">950.00</p>
+            <button class="buy-btn" onclick="buyProduct('Jacket', 950)">Buy Now</button>
+        </div>
+
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+    <a href="homepage.html">HOMEPAGE</a>
+    <a href="about.html">ABOUT</a>
+    <a href="product.html">PRODUCT</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="film viewing.html">FILM VIEWING</a>
+    <a href="log in form.html">LOGOUT</a>
+</nav>
+    <!-- JAVASCRIPT -->
+    <script>
+        function buyProduct(name, price) {
+            alert(
+                "Product: " + name +
+                "\nPrice: ?" + price.toFixed(2) +
+                "\n\nThank you for choosing our product!"
+            );
+        }
+    </script>
+
+</body>
+</html>

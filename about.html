@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("upp.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .about {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 30px 110px;
+        }
+
+        .content {
+            max-width: 750px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 25px;
+            margin: 25px 0 15px;
+            color: #00d9ff;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .bottom-nav {
+                bottom: 10px;
+                width: 96%;
+                padding: 8px 5px;
+                gap: 3px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 11px;
+            }
+
+            .content {
+                padding: 35px 20px;
+            }
+
+            .content h1 {
+                font-size: 35px;
+            }
+
+            .content h2 {
+                font-size: 21px;
+            }
+
+            .content p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="about">
+        <div class="content">
+
+            <h1>About Us</h1>
+
+            <p>
+                Welcome to our website! This website is created
+                to share information about our interests, products,
+                and other activities.
+            </p>
+
+            <h2>Our Mission</h2>
+
+            <p>
+                Our mission is to provide useful information
+                and create a simple, enjoyable experience for
+                everyone visiting our website.
+            </p>
+
+            <h2>Our Vision</h2>
+
+            <p>
+                Our vision is to build a website that is
+                informative, creative, user-friendly, and
+                accessible on both computers and mobile devices.
+            </p>
+
+            <h2>Thank You!</h2>
+
+            <p>
+                Thank you for visiting our website.
+                We hope you enjoy exploring our pages!
+            </p>
+
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="film viewing.html">FILM VIEWING</a>
+        <a href="log in form.html">LOGOUT</a>
+    </nav>
+
+</body>
+</html>

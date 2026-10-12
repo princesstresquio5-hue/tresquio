@@ -1,0 +1,142 @@
+<!DOCTYPE><html>
+<head>
+  <title>Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-image: url("up.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
+      width: 360px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(18px);
+      color: white;
+    }
+
+    h2 {
+      margin: 0 0 30px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 15px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      outline: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    input::placeholder {
+      color: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.85);
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    #message {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>log in</h2>
+
+    <form action="homepage.html" method="get">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <br><br>
+
+        <button type="submit">Log In</button>
+    </form>
+  </div>
+
+  <script>
+    const USERNAME = "admin";
+    const PASSWORD = "user";
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (username === USERNAME && password === PASSWORD) {
+        message.style.color = "lime";
+        message.textContent = "Login successful!";
+
+        setTimeout(function() {
+          window.location.href = "home.html";
+        }, 1000);
+
+      } else {
+        message.style.color = "blue";
+        message.textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Film Viewing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("upp.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .film-page {
+            min-height: 100vh;
+            padding: 40px 20px 150px;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .film-container {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(250px, 1fr)
+            );
+            gap: 22px;
+        }
+
+        .film-card {
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .film-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .product-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .film-card h2 {
+            font-size: 21px;
+            color: #00d9ff;
+            margin-bottom: 12px;
+        }
+
+        .film-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .film-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+            background: #000;
+        }
+
+        .watch-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #00d9ff;
+            color: black;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .watch-link:hover {
+            background: white;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover,
+        .bottom-nav a.active {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .film-page {
+                padding: 25px 12px 155px;
+            }
+
+            .content {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .film-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+                width: 96%;
+                padding: 8px 5px;
+                gap: 3px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="film-page">
+    <div class="content">
+
+        <h1> Product Film Viewing</h1>
+
+        <p class="intro">
+            Welcome to our Product Film Viewing page!
+            Watch product videos featuring fashion,
+            accessories, and lifestyle items.
+        </p>
+
+        <div class="film-container">
+
+            <!-- 1. CAP -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Cap Collection</h2>
+                <p>Explore stylish caps for everyday fashion.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=cap%20product%20commercial"
+                    title="Cap Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=cap+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Cap Videos
+                </a>
+            </div>
+
+            <!-- 2. T-SHIRT -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>T-Shirt Collection</h2>
+                <p>Discover fashionable shirts in different styles.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=t-shirt%20fashion%20commercial"
+                    title="T-Shirt Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=t-shirt+fashion+commercial"
+                   target="_blank" rel="noopener">
+                    More T-Shirt Videos
+                </a>
+            </div>
+
+            <!-- 3. JACKET -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Jacket Collection</h2>
+                <p>Watch jacket styles for casual and outdoor wear.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=jacket%20product%20commercial"
+                    title="Jacket Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=jacket+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Jacket Videos
+                </a>
+            </div>
+
+            <!-- 4. PERFUME -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Perfume Collection</h2>
+                <p>Explore fragrances and perfume collections.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/oSJMe8H1buw"
+                    title="Perfume Product Video"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=perfume+commercial"
+                   target="_blank" rel="noopener">
+                    More Perfume Videos
+                </a>
+            </div>
+
+            <!-- 5. SHOES -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Shoes Collection</h2>
+                <p>Discover sneakers and fashionable footwear.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=sneakers%20product%20commercial"
+                    title="Shoes Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=sneakers+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Shoes Videos
+                </a>
+            </div>
+
+            <!-- 6. WATCH -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Watch Collection</h2>
+                <p>Explore elegant watches and modern designs.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=watch%20product%20commercial"
+                    title="Watch Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=watch+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Watch Videos
+                </a>
+            </div>
+
+            <!-- 7. WALLET -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Wallet Collection</h2>
+                <p>Find practical wallets for everyday essentials.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=wallet%20product%20commercial"
+                    title="Wallet Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=wallet+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Wallet Videos
+                </a>
+            </div>
+
+            <!-- 8. HEADPHONES -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Headphones</h2>
+                <p>Explore headphones for music and entertainment.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=headphones%20product%20commercial"
+                    title="Headphones Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=headphones+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Headphone Videos
+                </a>
+            </div>
+
+            <!-- 9. BAG -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Bag Collection</h2>
+                <p>Discover bags for school, travel, and daily use.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=bag%20product%20commercial"
+                    title="Bag Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=bag+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Bag Videos
+                </a>
+            </div>
+
+            <!-- 10. SUNGLASSES -->
+            <div class="film-card">
+                <div class="product-icon"></div>
+                <h2>Sunglasses Collection</h2>
+                <p>Explore fashionable sunglasses and eyewear styles.</p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed?listType=search&list=sunglasses%20product%20commercial"
+                    title="Sunglasses Product Videos"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <a class="watch-link"
+                   href="https://www.youtube.com/results?search_query=sunglasses+product+commercial"
+                   target="_blank" rel="noopener">
+                    More Sunglasses Videos
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="film.html">FILM VIEWING</a>
+        <a href="log in form.html">LOGOUT</a>
+    </nav>
+
+</body>
+</html>
